@@ -1,0 +1,545 @@
+/* Reset CSS  */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Phần xài chung */
+html{
+    /* Cuộn khi click thanh điều hướng trong trang */
+    scroll-behavior: smooth;
+    font-family:Arial,Helvetica,sans-serif;
+    /* font chữ của web */
+}
+/* Từ trên xuống dưới , từ ngoài vào trong  ,từ tổng quan đến chi tiết */
+/* 
+    1./Vị trí
+    2./Kích thước (Width,height)
+    3./Màu sắc
+    4./Kiểu dáng(Kiểu chữ ,tròn vuông,...)
+*/
+.clear{
+    /* Một cách để cho member-list bao hết phần tử con của nó  */
+    clear:both;
+}
+
+/* Dùng để cho tất cả các chữ thành màu trắng */
+/* Chỉ cần thêm class này vào phía sau cái chữ muốn tô trắng */
+.text-white{
+    color:#fff !important;
+}
+/* Tìm những thuộc tính chung để gom lại tránh css nhiều lần  */
+/* Khi dùng thì xóa ở phía dưới tránh ghi đè và thêm class row và col */
+/* Có thể thay thế từ những phần content trước */
+/* Nhưng vì đã làm cách truyền thống nên phần dùng chung này sẽ để dành cho phần CONTACT */
+ .row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+/* Element giả */
+/* Để không cần ghi thẻ div clear */
+.row::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+.col-half{
+    width:50%;
+}
+
+.col-full{
+    width:100%;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.col-third
+{
+    width:33.33333%;
+}
+
+.mt-8{
+    margin-top: 8px !important;
+}
+
+.mt-16{
+    margin-top: 16px !important;
+}
+
+.mt-32
+{
+    margin-top:32px !important;
+}
+
+/* Phần main */
+#main {
+
+}
+
+
+#header {
+    height:46px;
+    /* Và header đã nổi lên cao ,nhường vị trí của mình đứng cho thằng sau là slider */
+    /* Nên slider sẽ bao gồm lun header */
+    /* Nên thêm thuộc tính margin-top =chiều cao header vào cái slider */
+    position: fixed;
+    /* Set top left right để cho nó sẽ ăn theo web , để sẽ dính vào các góc */
+    top:0;
+    left:0;
+    right:0;
+    background-color: #000;
+    /* Tạo cho header đứng yên khi cuộn */
+    /* Dùng để không cho hình ảnh nổi lên cái thanh điều hướng */
+    /* Nếu vẫn chưa được thì tăng giá trị lên tiếp  */
+    z-index: 1;
+    /* Để ẩn đi những lớp con mà tràn ra khỏi lớp cha */
+    
+  
+}
+
+/* Để thẻ ul không chiếm hết chiều ngang của trang web cho icon lên */
+#nav{
+    display:inline-block;
+}
+
+#nav,.subnav{
+    list-style-type:none;
+    /* Dùng để tắt dấu chấm của thẻ li  */
+}
+
+#nav>li{
+    display:inline-block;  
+}
+#nav li{
+    position: relative; 
+}
+/* Làm vậy để màu chữ chỉ ảnh hưởng đến thẻ a của thẻ li cấp 1 */
+#nav>li>a{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+/* Dành cho tất cả các cấp subnav */
+#nav li:hover .subnav{
+    display:block;
+}
+/* Dành cho tất cả các cấp */
+#nav li a{
+ 
+    line-height: 46px;
+    /* Chiều cao trên dưới */
+    padding:0px 24px;
+    /* Giãn cách các chữ ra */
+    display:block;
+    /* Để biểu diễn trong 1 khối */
+    text-decoration:none;
+    /* Bỏ dấu gạch chân */
+    
+}
+
+/* Chỉ dành cho cấp cha */
+#nav> li:hover >a {
+    color: #000;
+    background-color: #ccc;
+}
+/* CSS hover là pseudo class tức lớp giả */
+
+#nav .subnav li:hover{
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav{
+    display:none;
+    /* Để ẩn nó đi */
+    position: absolute;
+    /* Để nó thừa hưởng lớp cha */
+    background-color: #fff;
+    /* Đổ bóng cho khung */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    min-width: 160px;
+    /* Căng chỉnh để cho menu cấp 2 xuống dòng không bị cùng hàng khi inline-block ul */
+    top:100%;
+    left:0;
+}
+
+#nav .subnav a{
+    color: #000;
+    padding:0 12px;
+    line-height:38px;
+}
+
+/*Set thuộc tính dấu mũi tên xuống ngay chỗ chữ more */
+#nav .nav-arrow-down{
+    font-size:14px;
+}
+
+
+/*Để css trên phiên bản điện thoại*/
+#header .search-mobile-btn,
+#header .search-btn{/* Set thuộc tính kính lúp tìm kiếm */
+    float:right;
+    padding: 0 21px;
+   
+}
+#header .search-mobile-btn{
+ /* Để bên mobile không bị tụt cái kính lúp xuống dưới khi display block */
+ position: absolute;
+ top:0;
+ right:0;
+ /* Để tránh xảy ra lỗi trên PC và tablet , sẽ CSS riêng */
+ display:none;
+}
+
+#header .search-btn:hover{
+    background-color: #f44336;
+    cursor: pointer;
+        /* Thay đổi con chỏ chuột thành ngón tay  */
+    /* Để cho người dùng biết có thể click vào */
+}
+
+#header .search-mobile-btn:hover{
+    background-color: #ccc;
+}
+
+#header .search-mobile-btn:hover .search-iconmb{
+    color: #000;
+}
+
+#header .search-iconmb, 
+#header .search-icon{
+   color: #fff;
+   font-size:20px ; 
+   line-height: 46px;/*Chỉnh chiều cao của từng dòng*/
+
+}
+
+
+/* Content */
+#content {
+
+}
+
+#slider {
+    position: relative;
+    /* min-height: 500px;
+    background-color: #333;  */
+    /* Để cho nó không chiếm vị trí của header nhường lại */
+    margin-top: 46px;
+    /* 50% chiều ngang của chính nó */
+    padding-top: 50%;
+    /* Sử dụng dấu"/"để chỏ tới thư mục */
+    /* Sử dụng ../ để thể hiện sự tương đối và sau dấu / thì là cái thư mục ngang cấp với thư mục cha đang chứa cái đường dẫn này */
+    background: url(../img/slider/slider1.jpg) top center / cover no-repeat;;
+}
+
+#slider .text-content {
+    /* Đã được trả lại chỗ */
+    position: absolute;
+    color: #fff;
+    bottom : 47px;
+    left:50%;
+    /* Căng giữa chữ */
+    transform :translateX(-50%);
+    /* Căng phần description */
+    text-align :center;
+}
+
+#slider .text-heading{
+    font-weight:500;
+    font-size: 24px;
+
+}
+#slider .text-description{
+    font-size:12px;
+    /* Dựa trên web mẫu để canh không cần phải trên 15 dưới 10 cộng gộp 15 */
+    margin-top:25px;
+    /* Để chữ không bị chìm dưới slider */
+    text-shadow: 0 0 3px #000;
+}
+
+#content .content-section{
+    /* Dựa trên web mẫu */
+    width:800px;
+    max-width: 100%;/*Để màn hình được full chiều dài , khi thu nhỏ lại */
+    padding:64px 0 112px;
+    /* Một cách khác để chuyển ra giữa */
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;/*Để căn chỉnh trên tablet , chọn 16p để bù trừ với margin-left & margin-right : -8px của những thằng con*/
+    padding-right: 16px;
+}
+
+#content .section-heading{
+    font-size:30px;
+    text-align:center;
+    font-weight: 500;
+    letter-spacing:4px ;/*Dùng để cách chữ ra*/
+}
+
+#content .section-subheading{
+    /* Căn giữa chữ */
+    text-align:center;
+    font-size: 15px;
+    /* Dựa trên web mẫu đo được tính tổng */
+    margin-top: 25px;
+    /* Chữ in nghiêng */
+    font-style: italic;   
+    opacity: 0.6;/*Làm mờ chữ đi giá trị từ 0-1*/
+}
+
+#content .about-content{
+    font-size: 15px;
+    margin-top: 25px;
+    /* Căn đều hai bên như trang báo */
+    text-align:justify ;
+    line-height:1.4;
+}
+
+
+#content .members-list{
+    margin-top: 32px;/*Chọn vậy để lên PC khoảng cách vẫn không đổi khi lên mobile*/
+    /* Một cách khác để cho member-list bao hết phần tử con của nó */
+    overflow: hidden;
+}
+
+#content .Member-avatar{
+    width: 154px;
+    margin-top: 15px;
+    border-radius:4px;
+}
+
+#content .member-item{
+    float:left;
+    /* Phép tính để căn ra full trang */
+    width:calc(100%/3); 
+    text-align: center;
+      
+}
+
+#content .member-name
+{
+    font-size: 15px;
+
+}
+
+
+
+
+/* Tour section */
+.tour-section{
+    background-color: #000;
+}
+
+.tickets{
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+.tickets li{
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+    list-style-type: none;
+}
+
+.tickets .sold-out{
+    background-color: #f44336;
+    color: #fff;
+    padding:3px 4px;
+    margin-left: 16px;
+
+}
+
+.tickets .quantity
+{
+    float: right;
+    width:24px;
+    height:24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%; /* Để bo góc*/
+    text-align: center;
+    line-height:24px;
+    margin-top: -2px;/*Phải có float thì mới dùng được margin âm*/
+}
+
+/* Tour place */
+.places-list{
+    margin-top:16px;/*Chọn 16px để xử lý mobile*/
+    /* Sử dụng margin để căn cho hình nó bằng với khung mua vé ở trên */
+     margin-left:-8px;
+    margin-right:-8px; 
+    /* margin-bottom: 48px; */
+    /* Do cả 3 section đều bị lỗi trừ thằng này nên ta đi css chung cho cả 3  */
+    
+}
+
+
+
+.place-item{
+    float:left;
+    width:calc(100%/3); 
+    padding: 0 8px;
+    
+
+} 
+
+.place-img{
+   /* Để nằm gọn bên trong thằng chứa nó , không bị vượt qua khỏi chiều rộng */
+   width:100%;
+   /* Để không có khoảng cách giữa phần content-place và phần img */
+   display:block;
+
+}
+
+.place-img:hover{
+    opacity: 0.6;
+}
+
+.place-content{
+    background-color: #fff;
+    padding: 16px;
+    font-size: 15px;
+}
+
+.place-heading{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.place-time{
+    margin-top:15px;
+    color: #757575;
+}
+
+.place-description{
+    margin-top:15px;
+    line-height: 1.4;
+}
+
+.place-buy-btn{
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding:11px 16px;
+    /* Inline-block để cho không che chữ phía trên */
+    display: inline-block;
+    margin-top:15px ;
+    text-align: center;
+    border: none;
+
+}
+
+.place-buy-btn:hover{
+    color: #000;
+    background-color: #ccc;
+}
+
+/* CONTACT */
+
+.contact-content{
+    margin-top:48px;
+}
+
+.contact-info{
+    font-size:18px;
+    line-height:1.5;
+}
+
+.contact-info i{
+    width:30px;
+    display: inline-block;
+}
+
+.contact-info a{
+    color: #101aef;
+    opacity: 0.6;
+}
+
+.contact-info a:hover{
+    opacity: 1;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+
+.contact-form .form-control{
+    padding: 10px;
+    border:1px solid #ccc;
+    width:100%;
+    /* Có thể dùng outline để thay đổi viền khung  */
+}
+
+.contact-form .form-submit-btn{
+    font-size:15px;
+    color:#fff;
+    background-color: #000;
+    border:0px solid #000;
+    padding: 10px 16px;
+    float:right;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.contact-form .form-submit-btn:hover{
+    background-color: #ccc;
+    color: #000;
+}
+/* Map section */
+.map-section img{
+    width:100%;
+}
+
+/* Footer */
+#footer {
+    padding:64px 16px;
+    text-align: center;
+
+}
+
+#footer .social-list{
+    font-size: 24px;
+}
+
+#footer .social-list a{
+    color :rgba(0,0,0,0.6) ;
+    text-decoration: none;
+}
+
+#footer .social-list a:hover
+{
+    color :rgba(0,0,0,0.4) ;
+}
+
+#footer .copyright{
+    margin-top: 15px;
+    color :rgba(0,0,0,0.6) ;
+}
+
+#footer .copyright a{
+    color :rgba(0,0,0,0.6)
+}
+
+#footer .copyright a:hover{
+    opacity: 0.6;
+    color:blue;
+}
+
+
+
+

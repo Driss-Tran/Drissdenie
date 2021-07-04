@@ -1,0 +1,100 @@
+/* Mobile */
+/* Sử dụng đơn vị em */
+/* Search google convert px to em */
+@media(max-width:46.1875em)
+{
+    .s-full-width{
+        width:100% !important;
+        /* Tạo thêm để cho khi đọc code nhìn rõ ràng */
+    }
+    /* Tạo vậy chỉ để dành cho mobile */
+    .s-col-full{
+        width:100%;
+    }
+    /* Để cho người dùng trên đt nhấn vào chỗ nào cũng được trên 1 hàng */
+    #nav {
+        display:block;
+    }
+    #nav >li:first-child
+    {
+        /*Chỉ là lấy thẻ con đầu tiên */
+        display:inline-block;
+    }
+    /* Để cho header xuống dòng thành 1 hàng dành cho mobile */
+    #nav>li{
+        display:block;
+    }
+    #nav .subnav{
+        position: initial;
+        /* Để di chuyển về mặc định , để tắt cái absolute trên PC */
+        background-color: #333;
+
+    }
+    #nav .subnav a{
+        color:#fff;
+        padding: 5px 42px;
+        /* Để nhìn cho giống lớp con */
+    }
+    #nav li a{
+        padding: 1px 24px;
+    }
+    #header {
+        overflow:hidden;
+    }
+    #header .search-icon{
+        display:none;
+    }
+    #header .search-mobile-btn{
+        display:block;
+    }
+    #content .Member-avatar{
+        width:60%;
+    }
+    .contact-form{
+        margin-top: 32px;
+    }
+    .s-mt8{
+        margin-top: 8px;
+    }
+    #footer .copyright a{
+        padding:12px 0px;
+        display: inline-block;
+     }
+     .contact-form .form-submit-btn{
+         font-size:18px;    
+     }
+}
+
+/* Tablet */
+@media (min-width:46.25em) and (max-width:63.9375em)
+{
+    
+}
+/*Tablet && Mobile*/
+@media (max-width:63.9375em) 
+{
+    .place-buy-btn{
+        padding:15px 16px;
+    }
+    .contact-form .form-control{
+        padding:15px;
+        font-size:16px;
+    }
+    #footer .social-list{
+        font-size: 48px;
+    }
+    #footer .social-list a{
+        margin:0px 8px;
+    }
+    #footer .copyright a{
+       padding:12px 0px;
+       display: inline-block;
+    }
+    #nav .subnav a{
+        padding: 5px 12px;
+        /* Để nhìn cho giống lớp con */
+    }
+    .contact-info{
+        line-height: 2;
+    }
+}

@@ -1,3 +1,4 @@
+
 /* Reset CSS  */
 *{
     padding: 0;
@@ -225,6 +226,53 @@ html{
    line-height: 46px;/*Chỉnh chiều cao của từng dòng*/
 
 }
+/* Start slider */
+.cover-slider{
+    width: 100%;
+    background: rgb(15, 14, 14);
+}
+.carousel-container{
+    width: 52.5%;
+    margin:auto;
+    border: 5px solid black;
+    position:relative;
+    overflow: hidden;
+
+}
+
+.carousel-slider{
+    display: flex;
+    width:100%;
+    height: 500px;
+}
+
+#prevBtn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 5%;
+    font-size:30px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 48px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#nextBtn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    right: 5%;
+    font-size:30px;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* End slider */
 
 
 /* Content */
@@ -232,104 +280,6 @@ html{
 
 }
 
-/* Start slider */
-
-.slider{
-    width:800px;
-    height:800px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.slides{
-    width:500%;
-    height: 800px;
-    display: flex;
-}
-
-.slides input{
-    display: none;
-}
-
-.slide{
-    width: 20%;
-    transition:2s;
-}
-
-.slide img{
-    width:100%;
-    height: 800px;
-}
-
-/* Css for navigation */
-.navigation-manual{
-    position: absolute;
-    width:1900px;
-    margin-top: -40px;
-    display: flex;
-    justify-content:center;
-}
-
-.manual-btn{
-    border: 2px solid white;
-    padding:5px;
-    border-radius:10px;
-    cursor: pointer;
-    transition:1s;
-}
-
-.manual-btn:not(:last-child){
-    margin-right: 40px;
-}
-
-.manual-btn:hover{
-    background-color:#40d3dc;
-}
-
-#radio1:checked ~.first{
-    margin-left: 0;
-}
-#radio2:checked ~.first{
-    margin-left: -20%;
-}
-#radio3:checked ~.first{
-    margin-left: -40%;
-}
-
-
-/* Css for auto navigation */
-
-.navigation-auto{
-    position:absolute;
-    display: flex;
-    width: 1900px;
-    justify-content: center;
-    margin-top: 760px;
-}
-
-.navigation-auto div{
-    border: 2px solid #40d3dc;
-    padding: 5px;
-    border-radius: 10px;
-    transition: 1s;
-}
-
-.navigation-auto div:not(:last-child)
-{
-    margin-right: 40px;
-}
-
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background:white;
-}
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background:white;
-}
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background:white;
-}
-
-/* End slider */
 
 #content .content-section{
     /* Dựa trên web mẫu */

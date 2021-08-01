@@ -1,7 +1,7 @@
 /* Mobile */
 /* Sử dụng đơn vị em */
 /* Search google convert px to em */
-@media(max-width:46.1875em)
+@media(max-width:739px)
 {
     .s-full-width{
         width:100% !important;
@@ -63,15 +63,21 @@
      .contact-form .form-submit-btn{
          font-size:18px;    
      }
+     .hide-on-mobile{
+         display:none;
+     }
 }
 
 /* Tablet */
-@media (min-width:46.25em) and (max-width:63.9375em)
+@media (min-width:740px) and (max-width:1023px)
 {
-    
+    .hide-on-tablet{
+        display:none;
+    }
 }
+
 /*Tablet && Mobile*/
-@media (max-width:63.9375em) 
+@media (max-width:1024px) 
 {
     .place-buy-btn{
         padding:15px 16px;

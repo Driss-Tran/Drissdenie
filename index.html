@@ -51,37 +51,24 @@
                 <!-- End search -->
 
             </div>
-
-
-            <div id="slider">   
-                <div class="slides">
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
-                    <input type="radio" name="radio-btn" id="radio3">
-                    
-                    <div class="slide first">
-                        <img src="./assets/img/slider/slider5.jpg" alt="">
-                    </div>
-                    <div class="slide ">
+           
+        </div>
+        <!-- slider star -->
+            <div class="cover-slider">
+                <div class="carousel-container">
+                    <i class="ti-arrow-left" id="prevBtn"></i>
+                    <i class="ti-arrow-right" id="nextBtn"></i>
+                    <div class="carousel-slider">
+                        <img src="./assets/img/slider/slider3.jpg" id="lastClone" alt="">
+                        <img src="./assets/img/slider/slider1.jpg" alt="">
+                        <img src="./assets/img/slider/slider2.jpg" alt="">
                         <img src="./assets/img/slider/slider3.jpg" alt="">
+                        <img src="./assets/img/slider/slider1.jpg" id="firstClone" alt="">
+        
                     </div>
-                    <div class="slide ">
-                        <img src="./assets/img/slider/slider4.jpg" alt="">
-                    </div>
-
-                    <div class="navigation-auto">
-                        <div class="auto-btn1"></div>
-                        <div class="auto-btn2"></div>
-                        <div class="auto-btn3"></div>
-                    </div>
-
-                </div>
-                <div class="navigation-manual">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-                    <label for="radio3" class="manual-btn"></label>
                 </div>
             </div>
+    <!-- Slider end -->
 
 
             <div id="content">
@@ -338,23 +325,7 @@
         </script>
 
         <!-- Script for slider  -->
-        <script type="text/javascript">
-            var counter =1;
-            setInterval(function(){
-                document.getElementById('radio' + counter).checked =true;
-                if(counter==1){
-                    counter=2;
-                }
-                else if(counter==2)
-                {
-                    counter=3;
-                }
-                else if(counter==3)
-                {
-                    counter=1;
-                }
-                
-            },5000);
+        <script src="main.js">
         </script>
     </body>
 </html>     

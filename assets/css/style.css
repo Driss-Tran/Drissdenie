@@ -1,4 +1,4 @@
-
+	
 /* Reset CSS  */
 *{
     padding: 0;
@@ -668,4 +668,16 @@ html{
         opacity:1;
         transform: translateY(0px);
     }
+}
+
+
+.img-slider{
+    width: 100%;
+    margin-top: 12px;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+    height: 50%;
+    margin-top:160px;
 }
